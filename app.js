@@ -19,5 +19,11 @@ function editScreen(data){
         screenDiv.innerText = screenDiv.innerText.slice(0, textLength -1);
         return
     }
+
+    if (data == '%') {
+    if (screenDiv.innerText === '') return;
+    resultDiv.innerText = eval(screenDiv.innerText) / 100;
+    return;
+    }
     screenDiv.innerText += data
 }
