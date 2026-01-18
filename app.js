@@ -1,25 +1,24 @@
 var resultDiv = document.getElementById('result');
-
 function calculator(){
     var userInput = document.getElementById('input').innerText;
+    if (userInput === '') {
+        resultDiv.innerText = '0';
+        return;
+    }
     resultDiv.innerText = eval(userInput);
 }
-
 var screenDiv = document.getElementById('input')
-
 function editScreen(data){
     if (data == 'C') {
         screenDiv.innerText = '';
         resultDiv.innerText = '0';
         return;
     }
-
     if(data == 'del'){
         var textLength = screenDiv.innerText.length;
         screenDiv.innerText = screenDiv.innerText.slice(0, textLength -1);
         return
     }
-
     if (data == '%') {
     if (screenDiv.innerText === '') return;
     resultDiv.innerText = eval(screenDiv.innerText) / 100;
